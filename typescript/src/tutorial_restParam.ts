@@ -1,0 +1,14 @@
+function sum(message:string,...numbers:number[]):string{
+
+    const doubled=numbers.map(num=>num*2);
+
+    let total=numbers.reduce((prev,curr)=>{ return prev+curr},0);
+
+    return (`${message} ${total}`);
+
+}
+
+
+let result=sum('The total is ',1,2,3,4,5);
+
+console.log(result)
