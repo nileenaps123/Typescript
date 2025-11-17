@@ -1,6 +1,0 @@
-function logMessage(message:string):void{
-    console.log(message);
-    //return 'hello'
-}
-
-logMessage("hello,typescript")
