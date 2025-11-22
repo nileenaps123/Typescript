@@ -1,51 +1,28 @@
-interface Person{
-    name:string;
+enum UserRole {
+    Admin,
+    Manager, 
+    Employee
 }
 
-interface DogOwner extends Person{
-    dogName:string;
+type User= {
+    id :number;
+    name :string;
+    role :UserRole;
+    contact:[string,string]; //Tuple [email,phone]
+};
+
+function createUser (user:User):User{
+
+    return user;
+
 }
 
-interface Manager extends Person{
-    managePeople():void;
-    delegateTasks():void;
-}
+const newUser:User=createUser({
+                            id:1,
+                            name:'Joe',
+                            role:UserRole.Admin,
+                            contact:['xyz@mail','3873']
 
-function getEmployee():Person|DogOwner|Manager{
-    let random=Math.random();
-    if(random<0.33){
-        return{
-            name:"Alice"
-        };
-    }else if(random<0.66){
-        return {
-            name:"Joe",
-            dogName:"Rex"
+                        });
 
-        }
-    }else{
-        return{
-            name:"Bob",
-            managePeople:()=>{
-                console.log("managing people...")
-
-            },
-            delegateTasks(){
-                console.log("delegating tasks...")
-
-            }
-
-
-        }
-    }
-}
-
-const employee:Person|DogOwner|Manager=getEmployee();
-
-function isManager(obj:Person|DogOwner|Manager):obj is Manager{
-    return 'managePeople'  in obj
-}
-if (isManager(employee)){
-    employee.delegateTasks();
-}
-//console.log(isManager(employee));
+console.log(newUser);                        
