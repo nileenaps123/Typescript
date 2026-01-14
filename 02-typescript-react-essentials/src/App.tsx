@@ -1,7 +1,12 @@
+import Component from './starter/01-return'
+
 function App() {
   return (
     <main>
-      <h2>React & Typescript</h2>
+      <Component name="Peter" id={123}>
+      <h2>HelloWorld</h2>
+      </Component>
+      <Component name="Peter" id={123}></Component>
     </main>
   );
 }
