@@ -1,8 +1,22 @@
+import {useState} from 'react';
+
 function Component() {
+  const[text,setText]=useState('hello');
+  const[val,setVal]=useState(10);
+  const [list,setList]=useState<string[]>([]);
   return (
     <div>
-      <h2>React & Typescript</h2>
-      <h2>State</h2>
+      <h2 className='mb-1'>hello from typescript</h2>
+      <button
+        className='btn btn-center'
+        onClick={()=>{
+          setVal(100)
+          setList(['hello','world'])
+        }}
+        >
+          Click Me
+          <p>{val}</p>
+        </button>
     </div>
   );
 }
