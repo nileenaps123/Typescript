@@ -1,9 +1,10 @@
-import Component from './starter/03-state'
+import Component from './starter/05-challenge'
 
 function App() {
   return (
     <main>
-      <Component />
+      <Component type='Basic' name='christy'/>
+      <Component type='Advanced' name='peter' email='peter@gmail.com'/>
     </main>
   );
 }
